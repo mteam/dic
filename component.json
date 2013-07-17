@@ -1,0 +1,12 @@
+{
+  "name": "dic",
+  "repo": "mteam/dic",
+  "version": "0.1.0",
+  "development": {
+    "visionmedia/mocha": "*",
+    "component/assert": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
