@@ -41,8 +41,8 @@ describe('DI container', function() {
       assert(two == 123);
     }
 
-    dic.add('foo', Foo, { args: [123] });
-    dic.add('bar', Bar, { args: [321, 123] });
+    dic.add('foo', Foo, [123]);
+    dic.add('bar', Bar, [321, 123]);
 
     assert(dic.get('foo') instanceof Foo);
     assert(dic.get('bar') instanceof Bar);

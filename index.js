@@ -3,14 +3,13 @@ function DIContainer() {
   this.services = {};
 }
 
-DIContainer.prototype.add = function(name, cls, opts) {
+DIContainer.prototype.add = function(name, cls, args) {
+  args = args || [];
+
   this.factories[name] = function() {
     var deps = cls.requires ? cls.requires.map(this.get, this) : [];
-    var args = (opts && opts.args) || [];
-
-    var ctor = function() {};
-    ctor.prototype = cls.prototype;
-    var instance = new ctor;
+    
+    var instance = Object.create(cls.prototype);
     cls.apply(instance, [].concat(deps, args));
 
     return instance;
