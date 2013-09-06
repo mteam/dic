@@ -3,6 +3,10 @@ function DIContainer() {
   this.services = {};
 }
 
+DIContainer.prototype.set = function(name, service) {
+  this.services[name] = service;
+};
+
 DIContainer.prototype.add = function(name, cls, args) {
   args = args || [];
 
